@@ -8,6 +8,8 @@ on:
 jobs:
   update_changelog:
     runs-on: ubuntu-latest
+    outputs:
+      output: ${{ steps.changelog.outputs.changelog }}
     steps:
       - name: Generate Changelog
         id: changelog
@@ -15,3 +17,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           exclude_types: other,doc,chore
+      - name: Output Changelog
+        id: output_changelog
+        run: CHANGELOG=$(cat CHANGLOG.md | sed -e 's/# Changelog\n/# Changelog\n${{ steps.changelog.outputs.changelog }}/');echo "$CHANGELOG" > CHANGLOG.md
