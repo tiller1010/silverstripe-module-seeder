@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  update_release_draft:
+  update_changelog:
     permissions:
       contents: write  # for release-drafter/release-drafter to create a github release
       pull-requests: write  # for release-drafter/release-drafter to add label to PR
@@ -18,4 +18,4 @@ jobs:
       - name: Generate Changelog
         uses: loopwerk/tag-changelog@v1.0.4
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEEDER_GITHUB_TOKEN }}
