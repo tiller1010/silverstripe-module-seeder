@@ -1,10 +1,5 @@
 name: Generate Changelog
 
-# on:
-#   push:
-#     branches:
-#       - '*'
-
 on:
   release:
     types: [published]
@@ -29,3 +24,7 @@ jobs:
       - name: Output Changelog
         id: output_changelog
         run: TAGCONTENT="${{ steps.changelog.outputs.changelog }}";TAGCONTENT=$(echo "$TAGCONTENT" | grep '#');CHANGELOG=$(cat CHANGELOG.md);CHANGELOG=$(echo "$CHANGELOG" | sed -e "s/# Changelog/# Changelog\n${TAGCONTENT}/");echo "$CHANGELOG" > CHANGELOG.md
+      - name: Commit Updated Changelog
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated CHANGELOG.md
