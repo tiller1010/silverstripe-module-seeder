@@ -1,4 +1,5 @@
 # Changelog
+# 2.1.7 - 2022-07-06
 
 ## [2.1.0](https://github.com/werkbot/silverstripe-module-seeder/tree/2.1.0) (2022-04-08)
 
