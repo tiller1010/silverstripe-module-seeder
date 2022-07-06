@@ -21,3 +21,5 @@ jobs:
         with:
           token: ${{ secrets.SEEDER_GITHUB_TOKEN }}
           exclude_types: other,doc,chore
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEEDER_GITHUB_TOKEN }}
