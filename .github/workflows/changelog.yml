@@ -5,6 +5,8 @@ on:
     branches:
       - '*'
 
+permissions: read-all|write-all
+
 jobs:
   update_changelog:
     runs-on: ubuntu-latest
