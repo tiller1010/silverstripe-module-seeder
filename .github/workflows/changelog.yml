@@ -5,7 +5,8 @@ on:
     branches:
       - '*'
 
-permissions: read-all|write-all
+permissions:
+  contents: write
 
 jobs:
   update_changelog:
