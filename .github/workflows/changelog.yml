@@ -7,9 +7,6 @@ on:
 
 jobs:
   update_changelog:
-    permissions:
-      contents: write  # for release-drafter/release-drafter to create a github release
-      pull-requests: write  # for release-drafter/release-drafter to add label to PR
     runs-on: ubuntu-latest
     steps:
       - name: Generate Changelog
