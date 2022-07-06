@@ -9,6 +9,9 @@ on:
   push:
     tags:
       - '*'
+  create:
+    tags:
+      - '*'
 
 permissions:
   contents: write
