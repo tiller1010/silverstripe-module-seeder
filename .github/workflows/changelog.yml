@@ -1,8 +1,13 @@
 name: Generate Changelog
 
+# on:
+#   push:
+#     branches:
+#       - '*'
+
 on:
   push:
-    branches:
+    tags:
       - '*'
 
 permissions:
