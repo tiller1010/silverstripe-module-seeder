@@ -22,4 +22,4 @@ jobs:
           exclude_types: other,doc,chore
       - name: Output Changelog
         id: output_changelog
-        run: CHANGELOG=$(cat CHANGELOG.md | sed -e 's/# Changelog\n/# Changelog\n${{ steps.changelog.outputs.changelog }}/');echo "$CHANGELOG" > CHANGELOG.md
+        run: CHANGELOG=$(cat CHANGELOG.md);CHANGELOG=$(echo "$CHANGELOG" | sed 's/# Changelog\n/# Changelog\n${{ steps.changelog.outputs.changelog }}/');echo "$CHANGELOG" > CHANGELOG.md
