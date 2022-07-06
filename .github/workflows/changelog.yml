@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate Changelog
+        id: changelog
         uses: loopwerk/tag-changelog@v1.0.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.SEEDER_GITHUB_TOKEN }}
+        with:
+          token: ${{ secrets.SEEDER_GITHUB_TOKEN }}
+          exclude_types: other,doc,chore
