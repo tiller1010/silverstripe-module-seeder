@@ -6,12 +6,8 @@ name: Generate Changelog
 #       - '*'
 
 on:
-  push:
-    tags:
-      - '*'
-  create:
-    tags:
-      - '*'
+  release:
+    types: [published]
 
 permissions:
   contents: write
