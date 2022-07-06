@@ -13,7 +13,5 @@ jobs:
         id: changelog
         uses: loopwerk/tag-changelog@v1.0.4
         with:
-          token: ${{ secrets.SEEDER_GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           exclude_types: other,doc,chore
-        env:
-          GITHUB_TOKEN: ${{ secrets.SEEDER_GITHUB_TOKEN }}
