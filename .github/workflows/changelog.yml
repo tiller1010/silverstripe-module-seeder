@@ -23,6 +23,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           exclude_types: other,doc,chore
+          config_file: .github/tag-changelog-config.js
       - name: Output Changelog
         id: output_changelog
         run: TAGCONTENT="${{ steps.changelog.outputs.changelog }}";TAGCONTENT=$(echo "$TAGCONTENT" | grep '#');CHANGELOG=$(cat CHANGELOG.md);CHANGELOG=$(echo "$CHANGELOG" | sed -e "s/# Changelog/# Changelog\n${TAGCONTENT}/");echo "$CHANGELOG" > CHANGELOG.md
