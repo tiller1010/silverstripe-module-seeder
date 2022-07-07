@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.4 - 2022-07-07
+## 🔨 Improvements
+- commit type ([#7](https://github.com/tiller1010/silverstripe-module-seeder/pull/7) by [tiller1010](https://github.com/tiller1010))
+
+
+
 ## 3.0.3 - 2022-07-07
 
 
