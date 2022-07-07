@@ -1,5 +1,6 @@
 <?php
-/**/
+/*
+*/
 namespace Werkbot\Seeder;
 /**/
 use SilverStripe\Forms\FieldList;
