@@ -26,7 +26,7 @@ jobs:
           config_file: .github/tag-changelog-config.js
       - name: Output Changelog
         id: output_changelog
-        run: TAGCONTENT="${{ steps.changelog.outputs.changelog }}";TAGCONTENT=$(echo "$TAGCONTENT" | grep '#');CHANGELOG=$(cat CHANGELOG.md);CHANGELOG=$(echo "$CHANGELOG" | sed -e "s/# Changelog/# Changelog\n${TAGCONTENT}/");echo "$CHANGELOG" > CHANGELOG.md
+        run: TAGCONTENT="${{ steps.changelog.outputs.changelog }}";CHANGELOG=$(cat CHANGELOG.md);CHANGELOG=$(echo "$CHANGELOG" | sed -e "s/# Changelog//");echo -e "# Changelog\n\n$TAGCONTENT$CHANGELOG" > CHANGELOG.md
       - name: Commit Updated Changelog
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
